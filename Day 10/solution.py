@@ -2,20 +2,16 @@
 
 import sys
 
-n = int(raw_input().strip())
+n = int(input().strip())
 
-binary = list(bin(n)[2:])
-#print (binary)
-
-count = 0
+result = 0
 max_count = 0
-for i in binary:
-    if (i == '1'):
-        count += 1
+while num > 0:
+    if num % 2 == 1:
+        result += 1
+        if result > max_count:
+            max_count = result
     else:
-        if count > max_count:
-            max_count = count
-        count = 0
-if count > max_count:
-    max_count = count
+        result = 0
+    num //= 2
 print (max_count)
